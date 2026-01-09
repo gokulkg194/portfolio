@@ -1,43 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Gokul K G | Motor Control Engineer</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gokul K G | Engineering Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
 <header>
-  <h1>Gokul K G</h1>
-  <h2>Motor Control & Power Electronics Engineer</h2>
-  <p>Embedded Systems | Test Automation | Python Tools</p>
+    <h1>GOKUL K G</h1>
+    <p>Motor Control & Power Electronics Engineer</p>
+    <p>Embedded Systems | Python Automation | GUI Development</p>
+
+    <button id="themeToggle">🌙 Toggle Dark Mode</button>
 </header>
 
-<section>
-  <h3>About Me</h3>
-  <p>
-    I design and validate motor control systems, embedded firmware,
-    and automation tools for testing and vehicle tuning.
-  </p>
+<nav>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Me</h2>
+
+    <div class="about-content">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1581091870627-3a5a45f7b2a7?w=600" alt="Profile">
+        </div>
+
+        <div class="about-text">
+            <p>
+                I am an engineer specializing in electric vehicle systems, 
+                with expertise in motor control, power electronics, and embedded systems.
+            </p>
+
+            <div class="stats">
+                <div class="stat-box">
+                    <h3>3+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-box">
+                    <h3>5+</h3>
+                    <p>Projects</p>
+                </div>
+                <div class="stat-box">
+                    <h3>500+</h3>
+                    <p>Test Hours</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="resume-download">
+        <a href="resume/resume.pdf" download class="resume-btn">
+            📄 Download Resume
+        </a>
+    </div>
 </section>
 
-<section>
-  <h3>Projects</h3>
-  <ul>
-    <li>Vehicle Tuning Software (Python + CAN)</li>
-    <li>IPMSM Motor Control (FOC)</li>
-    <li>Endurance Test Automation</li>
-  </ul>
+<!-- PROJECTS -->
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="images/Typing_tester.png" alt="TypeTest Project">
+            <div class="gallery-overlay">
+                <h3>TypeTest</h3>
+
+                <div class="project-links">
+                    <button onclick="openModal('Typing speed test software',
+                    'Python-based keyboard typing speed calculator.')">
+                        Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/foc.png" alt="FOC Simulator">
+            <div class="gallery-overlay">
+                <h3>FOC Simulator</h3>
+                <p>Python Validation System</p>
+
+                <div class="project-links">
+                    <button onclick="openModal('Field Oriented Control Simulator',
+                    'FOC Simulation software with more graphical representations.')">
+                        Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </section>
 
-<section>
-  <h3>Contact</h3>
-  <p>Email:gokulkg194@gmail.com</p>
-  <p>
-    <a href="https://github.com/yourusername">GitHub</a> |
-    <a href="https://linkedin.com/in/gokul-k-g-b400b5165">LinkedIn</a>
-  </p>
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Get In Touch</h2>
+
+    <div class="contact-info">
+        <div class="contact-card">
+            <div style="font-size: 2rem; margin-bottom: 1rem;">📧</div>
+            <h3>Email</h3>
+            <a href="mailto:gokulkg194@gamil.com">gokulkg194@gamil.com</a>
+        </div>
+
+        <div class="contact-card">
+            <div style="font-size: 2rem; margin-bottom: 1rem;">📱</div>
+            <h3>Phone</h3>
+            <a href="tel:+918078800999">+91 8078800999</a>
+        </div>
+
+        <div class="contact-card">
+            <div style="font-size: 2rem; margin-bottom: 1rem;">📍</div>
+            <h3>Location</h3>
+            <p>Bangalore, India</p>
+        </div>
+    </div>
+
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/gokul-k-g-b400b5165" target="_blank" class="social-btn">
+            🔗 LinkedIn Profile
+        </a>
+        <a href="https://github.com/your-username" target="_blank" class="social-btn">
+            💻 GitHub
+        </a>
+    </div>
+
+    <form class="contact-form">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" required>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Message</label>
+            <textarea required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+    </form>
 </section>
 
+<footer>
+    <p>© 2026 Gokul K G | gokulkg.com</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+        <a href="mailto:gokulkg194@gmail.com" style="color: var(--accent); text-decoration: none;">gokulkg194@gmail.com</a> | 
+        <a href="tel:+919876543210" style="color: var(--accent); text-decoration: none;">+91 8078800999</a>
+    </p>
+</footer>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+        <h3 id="modalTitle"></h3>
+        <p id="modalText"></p>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
 </body>
 </html>
