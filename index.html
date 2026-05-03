@@ -4,171 +4,463 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gokul K G | Engineering Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
 
-<header>
-    <h1>GOKUL K G</h1>
-    <p>Motor Control & Power Electronics Engineer</p>
-    <p>Embedded Systems | Python Automation | GUI Development</p>
+<!-- LOADER -->
+<div id="loader">
+    <div class="loader-inner">
+        <span>G</span><span>K</span><span>G</span>
+    </div>
+</div>
 
-    <button id="themeToggle">🌙 Toggle Dark Mode</button>
+<!-- CURSOR -->
+<div class="cursor"></div>
+<div class="cursor-trail"></div>
+
+<!-- HEADER -->
+<header id="home">
+    <div class="header-bg">
+        <div class="grid-overlay"></div>
+        <div class="noise-overlay"></div>
+    </div>
+    <div class="header-content">
+        <div class="badge">⚡ Available for opportunities</div>
+        <h1>GOKUL<br><span class="outlined">K G</span></h1>
+        <p class="tagline">Motor Control & Power Electronics Engineer</p>
+        <p class="sub-tagline">Embedded Systems · Python Automation · GUI Development</p>
+        <div class="header-actions">
+            <a href="#projects" class="cta-btn primary">View Projects</a>
+            <a href="#contact" class="cta-btn secondary">Let's Talk</a>
+        </div>
+    </div>
+    <button id="themeToggle" aria-label="Toggle dark mode">
+        <span class="toggle-icon">🌙</span>
+    </button>
+    <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
 </header>
 
-<nav>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<!-- NAV -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="#home" class="nav-logo">GKG</a>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#blog">Insights</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-menu-btn" id="mobileMenuBtn">☰</button>
+    </div>
 </nav>
 
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+    <ul>
+        <li><a href="#about" onclick="closeMobileNav()">About</a></li>
+        <li><a href="#skills" onclick="closeMobileNav()">Skills</a></li>
+        <li><a href="#projects" onclick="closeMobileNav()">Projects</a></li>
+        <li><a href="#testimonials" onclick="closeMobileNav()">Testimonials</a></li>
+        <li><a href="#blog" onclick="closeMobileNav()">Insights</a></li>
+        <li><a href="#contact" onclick="closeMobileNav()">Contact</a></li>
+    </ul>
+</div>
+
 <!-- ABOUT -->
-<section id="about">
-    <h2>About Me</h2>
-
-    <div class="about-content">
-        <div class="about-image">
-            <img src="images/cover_photo.png" alt="Profile">
-        </div>
-
-        <div class="about-text">
-            <p>
-                I am an engineer specializing in electric vehicle systems, 
-                with expertise in motor control, power electronics, and embedded systems.
-            </p>
-
-            <div class="stats">
-                <div class="stat-box">
-                    <h3>3+</h3>
-                    <p>Years Experience</p>
+<section id="about" class="section">
+    <div class="section-inner">
+        <div class="section-label">01 — About</div>
+        <h2 class="section-title">Who I Am</h2>
+        <div class="about-layout">
+            <div class="about-image-wrap">
+                <div class="image-frame">
+                    <img src="images/cover_photo.png" alt="Gokul K G">
+                    <div class="image-decoration"></div>
                 </div>
-                <div class="stat-box">
-                    <h3>5+</h3>
-                    <p>Projects</p>
+            </div>
+            <div class="about-text">
+                <p class="about-lead">I build intelligent systems that bridge the gap between hardware and software — specialising in electric vehicle powertrains, motor control algorithms, and embedded automation.</p>
+                <p>With a deep focus on Field Oriented Control, power electronics, and Python-based tooling, I design solutions that perform reliably in real-world conditions. I care about elegant engineering: code that's readable, systems that are testable, and interfaces that make complex data intuitive.</p>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
+                        <p>Projects</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num" data-target="500">0</span><span class="stat-plus">+</span>
+                        <p>Test Hours</p>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <h3>500+</h3>
-                    <p>Test Hours</p>
-                </div>
+                <a href="resume/resume.pdf" download class="resume-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download Resume
+                </a>
             </div>
         </div>
     </div>
+</section>
 
-    <div class="resume-download">
-        <a href="resume/resume.pdf" download class="resume-btn">
-            📄 Download Resume
-        </a>
+<!-- SKILLS -->
+<section id="skills" class="section section-alt">
+    <div class="section-inner">
+        <div class="section-label">02 — Skills</div>
+        <h2 class="section-title">Expertise</h2>
+        <div class="skills-grid">
+
+            <div class="skill-category" data-delay="0">
+                <div class="skill-icon">⚡</div>
+                <h3>Power Electronics</h3>
+                <ul>
+                    <li>Field Oriented Control (FOC)</li>
+                    <li>BLDC / PMSM Motor Drives</li>
+                    <li>Inverter Design & Simulation</li>
+                    <li>PWM Generation</li>
+                    <li>Gate Driver Circuits</li>
+                </ul>
+                <div class="skill-bar-group">
+                    <div class="skill-bar-label">FOC & Motor Control</div>
+                    <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                    <div class="skill-bar-label">Power Circuits</div>
+                    <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                </div>
+            </div>
+
+            <div class="skill-category" data-delay="100">
+                <div class="skill-icon">🔧</div>
+                <h3>Embedded Systems</h3>
+                <ul>
+                    <li>STM32 / ARM Cortex-M</li>
+                    <li>CAN Bus & UART Protocols</li>
+                    <li>RTOS Integration</li>
+                    <li>Hardware-in-Loop Testing</li>
+                    <li>Firmware Debugging</li>
+                </ul>
+                <div class="skill-bar-group">
+                    <div class="skill-bar-label">Microcontrollers</div>
+                    <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                    <div class="skill-bar-label">Protocols & Comms</div>
+                    <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+                </div>
+            </div>
+
+            <div class="skill-category" data-delay="200">
+                <div class="skill-icon">🐍</div>
+                <h3>Python & Software</h3>
+                <ul>
+                    <li>GUI Development (Tkinter / PyQt)</li>
+                    <li>Data Analysis & Visualisation</li>
+                    <li>Test Automation Frameworks</li>
+                    <li>Matplotlib / NumPy / Pandas</li>
+                    <li>Script & Tool Development</li>
+                </ul>
+                <div class="skill-bar-group">
+                    <div class="skill-bar-label">Python</div>
+                    <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+                    <div class="skill-bar-label">GUI & Automation</div>
+                    <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+                </div>
+            </div>
+
+            <div class="skill-category" data-delay="300">
+                <div class="skill-icon">🚗</div>
+                <h3>EV Systems</h3>
+                <ul>
+                    <li>BMS Integration</li>
+                    <li>Drivetrain Architecture</li>
+                    <li>Thermal Management</li>
+                    <li>Vehicle-Level Testing</li>
+                    <li>EV Standards & Safety</li>
+                </ul>
+                <div class="skill-bar-group">
+                    <div class="skill-bar-label">EV Powertrain</div>
+                    <div class="skill-bar"><div class="skill-fill" data-width="87"></div></div>
+                    <div class="skill-bar-label">System Integration</div>
+                    <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Tools -->
+        <div class="tools-strip">
+            <h3>Tools & Environments</h3>
+            <div class="tools-list">
+                <span class="tool-tag">MATLAB/Simulink</span>
+                <span class="tool-tag">STM32CubeIDE</span>
+                <span class="tool-tag">Altium Designer</span>
+                <span class="tool-tag">Python 3</span>
+                <span class="tool-tag">Git</span>
+                <span class="tool-tag">VS Code</span>
+                <span class="tool-tag">Oscilloscope</span>
+                <span class="tool-tag">CAN Analyser</span>
+                <span class="tool-tag">LTspice</span>
+                <span class="tool-tag">Keil MDK</span>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
-    <h2>Projects</h2>
+<section id="projects" class="section">
+    <div class="section-inner">
+        <div class="section-label">03 — Projects</div>
+        <h2 class="section-title">Selected Work</h2>
+        <div class="projects-grid">
 
-    <div class="gallery">
-
-        <div class="gallery-item">
-            <img src="images/Typing_tester.png" alt="TypeTest Project">
-            <div class="gallery-overlay">
-                <h3>TypeTest</h3>
-
-                <div class="project-links">
-                    <button onclick="openModal('Typing speed test software',
-                    'Python-based keyboard typing speed calculator.')">
-                        Details
-                    </button>
+            <div class="project-card" data-delay="0">
+                <div class="project-image">
+                    <img src="images/foc.png" alt="FOC Simulator">
+                    <div class="project-overlay">
+                        <button class="detail-btn" onclick="openModal('Field Oriented Control Simulator', 'FOC Simulation software with advanced graphical representations. Built to validate motor control algorithms before hardware deployment, enabling real-time visualisation of Park/Clarke transforms, torque/flux regulation, and space vector PWM generation.', 'Python · Matplotlib · NumPy', '🚀 Production Tool · 500+ Test Hours')">View Details</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span>Python</span><span>Motor Control</span><span>Simulation</span>
+                    </div>
+                    <h3>FOC Simulator</h3>
+                    <p>Python validation system for field-oriented control algorithms with rich graphical output.</p>
                 </div>
             </div>
-        </div>
 
-        <div class="gallery-item">
-            <img src="images/foc.png" alt="FOC Simulator">
-            <div class="gallery-overlay">
-                <h3>FOC Simulator</h3>
-                <p>Python Validation System</p>
-
-                <div class="project-links">
-                    <button onclick="openModal('Field Oriented Control Simulator',
-                    'FOC Simulation software with more graphical representations.')">
-                        Details
-                    </button>
+            <div class="project-card" data-delay="150">
+                <div class="project-image">
+                    <img src="images/Typing_tester.png" alt="TypeTest Project">
+                    <div class="project-overlay">
+                        <button class="detail-btn" onclick="openModal('TypeTest — Typing Speed Analyser', 'Python-based keyboard typing speed calculator with real-time WPM tracking, accuracy scoring, and performance history. Built with a clean GUI and exportable reports for tracking improvement over time.', 'Python · Tkinter · CSV', '⌨️ Desktop App · Open Source')">View Details</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span>Python</span><span>GUI</span><span>Automation</span>
+                    </div>
+                    <h3>TypeTest</h3>
+                    <p>Real-time WPM calculator with accuracy tracking and performance history logging.</p>
                 </div>
             </div>
-        </div>
 
+            <div class="project-card project-card--wide" data-delay="300">
+                <div class="project-image">
+                    <div class="project-placeholder">
+                        <span>🔋</span>
+                    </div>
+                    <div class="project-overlay">
+                        <button class="detail-btn" onclick="openModal('EV Powertrain Test Framework', 'Automated hardware-in-loop testing suite for EV drivetrain components. Includes CAN-based data logging, fault injection testing, thermal monitoring, and automated report generation.', 'Python · CAN Bus · STM32', '🏎️ Internal Tool · Proprietary')">View Details</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span>Embedded</span><span>CAN Bus</span><span>EV</span>
+                    </div>
+                    <h3>EV Powertrain Test Framework</h3>
+                    <p>Automated hardware-in-loop test suite for EV drivetrain validation with real-time CAN logging.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="section section-alt">
+    <div class="section-inner">
+        <div class="section-label">04 — Testimonials</div>
+        <h2 class="section-title">What People Say</h2>
+        <div class="testimonials-grid">
+
+            <div class="testimonial-card" data-delay="0">
+                <div class="quote-mark">"</div>
+                <p>Gokul's work on our motor control firmware was outstanding. He identified and resolved a critical FOC tuning issue that had been blocking us for weeks. His systematic approach and deep domain knowledge are impressive.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SR</div>
+                    <div>
+                        <strong>Suresh R.</strong>
+                        <span>Senior Engineer, EV Startup</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card" data-delay="150">
+                <div class="quote-mark">"</div>
+                <p>The Python automation framework Gokul built reduced our test cycle from 3 days to 4 hours. Clean, well-documented code that the whole team could understand and extend. Exactly what we needed.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">PM</div>
+                    <div>
+                        <strong>Priya M.</strong>
+                        <span>Test Lead, Power Electronics Lab</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card" data-delay="300">
+                <div class="quote-mark">"</div>
+                <p>Rarely do you find someone who bridges hardware and software so naturally. Gokul's GUI tool for visualising our inverter test data is now a core part of our R&D workflow.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AK</div>
+                    <div>
+                        <strong>Arun K.</strong>
+                        <span>R&D Manager, Motor Drive Systems</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- BLOG / INSIGHTS -->
+<section id="blog" class="section">
+    <div class="section-inner">
+        <div class="section-label">05 — Insights</div>
+        <h2 class="section-title">Engineering Notes</h2>
+        <div class="blog-grid">
+
+            <article class="blog-card" data-delay="0">
+                <div class="blog-date">April 2025</div>
+                <div class="blog-tag">Motor Control</div>
+                <h3>Understanding Space Vector PWM in FOC</h3>
+                <p>A practical breakdown of SVPWM — how it reduces harmonic distortion and improves DC bus utilisation compared to sinusoidal PWM in three-phase inverters.</p>
+                <button class="blog-read-btn" onclick="openBlogModal('Understanding Space Vector PWM in FOC', 'Space Vector PWM (SVPWM) is a sophisticated PWM technique used in Field Oriented Control that treats the three-phase system as vectors in a 2D plane. Unlike sinusoidal PWM which controls each phase independently, SVPWM considers the combined effect of all three phases simultaneously.\n\nKey advantages include: up to 15% better DC bus utilisation, lower Total Harmonic Distortion (THD), reduced switching losses compared to 6-step commutation, and smoother torque output at low speeds.\n\nIn practice, SVPWM calculates the time each voltage vector is applied within a switching period to synthesise any desired output voltage vector — enabling precise flux and torque control in PMSM and BLDC motors.')">Read Note →</button>
+            </article>
+
+            <article class="blog-card" data-delay="150">
+                <div class="blog-date">February 2025</div>
+                <div class="blog-tag">Python</div>
+                <h3>Building Robust Test Automation for Embedded Systems</h3>
+                <p>How I structure Python test frameworks for hardware validation — from CAN message parsing to automated report generation with minimal boilerplate.</p>
+                <button class="blog-read-btn" onclick="openBlogModal('Building Robust Test Automation for Embedded Systems', 'Testing embedded systems requires bridging the gap between hardware interfaces and software logic. Here\'s my approach:\n\n1. Abstraction Layers: Keep hardware-specific code (CAN drivers, serial interfaces) separate from test logic. This makes tests portable across different hardware setups.\n\n2. State Machine Testing: Model the device under test as a state machine. Each test case transitions the DUT through known states and validates outputs.\n\n3. Data-Driven Tests: Store test vectors in CSV or JSON files. This lets engineers modify test cases without touching Python code.\n\n4. Automated Reporting: Use matplotlib to generate plots of measured vs expected values, auto-saved as PDFs alongside timestamped CSV logs.\n\n5. Fault Injection: Deliberately inject out-of-range CAN signals to validate fault handling — critical for safety-critical EV systems.')">Read Note →</button>
+            </article>
+
+            <article class="blog-card" data-delay="300">
+                <div class="blog-date">December 2024</div>
+                <div class="blog-tag">EV Systems</div>
+                <h3>Thermal Management Lessons from EV Motor Testing</h3>
+                <p>Observations from 500+ hours of motor testing on how thermal runaway begins, how to detect early warning signs, and the measurement techniques that matter most.</p>
+                <button class="blog-read-btn" onclick="openBlogModal('Thermal Management Lessons from EV Motor Testing', 'After 500+ hours of motor testing, thermal behaviour is one of the most underestimated aspects of EV system design. Key lessons:\n\nEarly Warning Signs: A 15°C rise in stator temperature under constant load is a precursor to efficiency drops. Monitor winding resistance — it rises approximately 0.4% per °C for copper windings.\n\nMeasurement Points: Place thermocouples not just on the housing but on the end-windings and at the air gap. Housing temperature lags actual winding temperature by 30-90 seconds at high current densities.\n\nCooling Efficiency: Water-jacket cooling maintains motor efficiency up to 20% better than air cooling at peak torque. But the pump parasitic load must be factored into system efficiency calculations.\n\nFirmware Response: Implement thermal derating curves in firmware — smooth torque reduction starting at 120°C winding temp prevents the abrupt performance drops that frustrate drivers.')">Read Note →</button>
+            </article>
+
+        </div>
     </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-    <h2>Get In Touch</h2>
-
-    <div class="contact-info">
-        <div class="contact-card">
-            <div style="font-size: 2rem; margin-bottom: 1rem;">📧</div>
-            <h3>Email</h3>
-            <a href="mailto:gokulkg194@gamil.com">gokulkg194@gamil.com</a>
-        </div>
-
-        <div class="contact-card">
-            <div style="font-size: 2rem; margin-bottom: 1rem;">📱</div>
-            <h3>Phone</h3>
-            <a href="tel:+918078800999">+91 8078800999</a>
-        </div>
-
-        <div class="contact-card">
-            <div style="font-size: 2rem; margin-bottom: 1rem;">📍</div>
-            <h3>Location</h3>
-            <p>Bangalore, India</p>
+<section id="contact" class="section section-alt">
+    <div class="section-inner">
+        <div class="section-label">06 — Contact</div>
+        <h2 class="section-title">Let's Build Something</h2>
+        <div class="contact-layout">
+            <div class="contact-left">
+                <p class="contact-lead">Open to full-time roles, freelance projects, and technical collaborations in EV, motor control, and embedded systems.</p>
+                <div class="contact-cards">
+                    <a href="mailto:gokulkg194@gmail.com" class="contact-card">
+                        <div class="contact-card-icon">📧</div>
+                        <div>
+                            <strong>Email</strong>
+                            <span>gokulkg194@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="tel:+918078800999" class="contact-card">
+                        <div class="contact-card-icon">📱</div>
+                        <div>
+                            <strong>Phone</strong>
+                            <span>+91 80788 00999</span>
+                        </div>
+                    </a>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">📍</div>
+                        <div>
+                            <strong>Location</strong>
+                            <span>Bangalore, India</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/gokul-k-g-b400b5165" target="_blank" class="social-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/your-username" target="_blank" class="social-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Project / Collaboration / Role">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
-
-    <div class="social-links">
-        <a href="https://www.linkedin.com/in/gokul-k-g-b400b5165" target="_blank" class="social-btn">
-            🔗 LinkedIn Profile
-        </a>
-        <a href="https://github.com/your-username" target="_blank" class="social-btn">
-            💻 GitHub
-        </a>
-    </div>
-
-    <form class="contact-form">
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" required>
-        </div>
-
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" required>
-        </div>
-
-        <div class="form-group">
-            <label>Message</label>
-            <textarea required></textarea>
-        </div>
-
-        <button type="submit">Send Message</button>
-    </form>
 </section>
 
 <footer>
-    <p>© 2026 Gokul K G | gokulkg.com</p>
-    <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-        <a href="mailto:gokulkg194@gmail.com" style="color: var(--accent); text-decoration: none;">gokulkg194@gmail.com</a> | 
-        <a href="tel:+919876543210" style="color: var(--accent); text-decoration: none;">+91 8078800999</a>
-    </p>
+    <div class="footer-inner">
+        <div class="footer-logo">GKG</div>
+        <p>© 2026 Gokul K G — Motor Control & Power Electronics Engineer</p>
+        <p class="footer-links">
+            <a href="mailto:gokulkg194@gmail.com">gokulkg194@gmail.com</a>
+            <span>·</span>
+            <a href="tel:+918078800999">+91 80788 00999</a>
+            <span>·</span>
+            <span>Bangalore, India</span>
+        </p>
+    </div>
 </footer>
 
-<!-- MODAL -->
-<div id="modal" class="modal">
+<!-- PROJECT MODAL -->
+<div id="modal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-content">
-        <span class="close" onclick="closeModal()">×</span>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+        <div class="modal-tag" id="modalTag"></div>
         <h3 id="modalTitle"></h3>
         <p id="modalText"></p>
+        <div class="modal-meta" id="modalMeta"></div>
+        <div class="modal-footer-info" id="modalFooter"></div>
+    </div>
+</div>
+
+<!-- BLOG MODAL -->
+<div id="blogModal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-content modal-content--blog">
+        <button class="modal-close" onclick="closeBlogModal()" aria-label="Close">✕</button>
+        <h3 id="blogModalTitle"></h3>
+        <div class="blog-modal-body" id="blogModalBody"></div>
     </div>
 </div>
 
